@@ -1,0 +1,97 @@
+{
+  "figure": "Fig. 3 Test-Set Prediction Example",
+  "selection_rule": "held-out test samples closest to active-count targets: low around 150 but not exactly 150, medium slightly above 1000, and high above 2000",
+  "data_sources": {
+    "y_test_true": "./results/fullrange_10k_retrain/eval_test/y_test_true.npy",
+    "y_test_pred": "./results/fullrange_10k_retrain/eval_test/y_test_pred.npy",
+    "x": "./data/fullrange_cache/x.npy",
+    "summary": "./results/fullrange_10k_retrain/eval_test/summary.json",
+    "test_global_indices": "./results/fullrange_10k_retrain/eval_test/test_global_indices.npy"
+  },
+  "samples": [
+    {
+      "density": "Low",
+      "sample_index_in_test": 68,
+      "global_index": 3141,
+      "active_count": 149,
+      "field_rmse": 119.55939668596282,
+      "field_r2": 0.9940368328977944,
+      "target_active_count": 150
+    },
+    {
+      "density": "Medium",
+      "sample_index_in_test": 1460,
+      "global_index": 8747,
+      "active_count": 1021,
+      "field_rmse": 589.7568196994713,
+      "field_r2": 0.9981989231382011,
+      "target_active_count": 1020
+    },
+    {
+      "density": "High",
+      "sample_index_in_test": 985,
+      "global_index": 159,
+      "active_count": 2049,
+      "field_rmse": 671.6551069630231,
+      "field_r2": 0.9993768534354278,
+      "target_active_count": 2050
+    }
+  ],
+  "frequencies": {
+    "indices": [
+      11,
+      22
+    ],
+    "labels": [
+      "3.55 MHz",
+      "12.50 MHz"
+    ]
+  },
+  "unit": {
+    "field_magnitude": "Pa",
+    "absolute_error": "Pa",
+    "displayed_error": "normalized absolute error",
+    "provenance": "Confirmed by the project advisor and reported by the user on 2026-05-26."
+  },
+  "selection_metrics_summary": {
+    "all_sample_rmse_summary": {
+      "min": 84.41708059667599,
+      "q25": 305.712530834912,
+      "median": 433.7453972094772,
+      "q75": 580.9870241566815,
+      "max": 9034.495317073675
+    },
+    "active_count_summary": {
+      "min": 0,
+      "median": 1213.5,
+      "max": 2499
+    }
+  },
+  "test_metrics_snapshot": {
+    "evaluated_samples": 1500,
+    "pointwise_metrics_denorm": {
+      "mse": 436552.40625,
+      "rmse": 660.7211259298434,
+      "mae": 178.3646697998047,
+      "r2": 0.9989005923271179,
+      "mape": 514488960.0
+    },
+    "pointwise_metrics_standardized": {
+      "loss": 0.0005551297897472977,
+      "mse": 0.0005551297897472977,
+      "rmse": 0.023561192451726585
+    },
+    "speed_metrics": {
+      "single_mask_ms_mean": 3.1224144777903953,
+      "single_mask_ms_median": 2.9356309678405523,
+      "batch100_ms_mean": 53.28524662181735,
+      "batch100_ms_median": 52.934938576072454,
+      "batch100_per_sample_ms_mean": 0.5328524662181735,
+      "batch_size_for_batch_benchmark": 100.0,
+      "single_repeats": 30.0,
+      "batch_repeats": 10.0,
+      "warmup_repeats": 5.0
+    }
+  },
+  "note": "Each active-count group is a 2 x 3 grid: two frequencies by ground truth, prediction, and normalized absolute error. Colors are normalized independently within each frequency row for visualization; numbers in error panels are RMSE values normalized by the field dynamic range of the corresponding frequency row and shown as percentages."
+}

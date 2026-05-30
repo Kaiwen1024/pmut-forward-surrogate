@@ -1,0 +1,23 @@
+{
+  "figure": "Application-metric consistency",
+  "scope": "n(M)>100 held-out test samples",
+  "n_samples": 1443,
+  "data_sources": {
+    "per_sample_application_metrics": "figures/paper/fig5_field_error_breakdown/data/per_sample_application_metrics.csv",
+    "application_metrics_summary": "figures/paper/fig5_field_error_breakdown/data/application_metrics_summary.json"
+  },
+  "center_6db": {
+    "exact_pct": 91.40679140679141,
+    "within_one_pct": 97.0893970893971,
+    "mean_bin_error": 0.11503811503811504
+  },
+  "fbw_6db": {
+    "exact_pct": 91.40679140679141,
+    "within_one_pct": 100.0,
+    "mean_bin_error": 0.08593208593208593
+  },
+  "peak_log": {
+    "mae": 0.007486921923878829,
+    "pearson_r": 0.9996170071568335
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "pmut-forward-application-metrics-v1",
+  "source": "paper_table_ii",
+  "notes": "Application-level metrics computed on the held-out test split. The ROI is the central 10 x 10 spatial window.",
+  "metrics": [
+    {
+      "name": "ROI curve RMSE",
+      "unit": "Pa",
+      "mean": 575.0,
+      "median": 443.0,
+      "p95": 1292.0
+    },
+    {
+      "name": "Peak |P| error",
+      "unit": "Pa",
+      "mean": 1357.0,
+      "median": 946.0,
+      "p95": 3871.0
+    },
+    {
+      "name": "Peak f error",
+      "unit": "MHz",
+      "mean": 0.066,
+      "median": 0.0,
+      "p95": 0.45
+    },
+    {
+      "name": "6-dB center f error",
+      "unit": "MHz",
+      "mean": 0.02,
+      "median": 0.0,
+      "p95": 0.2
+    },
+    {
+      "name": "6-dB BW error",
+      "unit": "MHz",
+      "mean": 0.042,
+      "median": 0.0,
+      "p95": 0.4
+    },
+    {
+      "name": "High-response RMSE",
+      "unit": "Pa",
+      "mean": 1371.0,
+      "median": 1175.0,
+      "p95": 2847.0
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "data": {
+    "data_dir": "data/raw_mat",
+    "cache_path": "data/fullrange_cache",
+    "input_key": "mask_rand",
+    "target_key": "Ptot",
+    "complex_mode": "magnitude",
+    "max_samples": null,
+    "min_active_count": 0,
+    "max_active_count": null
+  },
+  "split": {
+    "split_seed": 42,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "counts": {
+      "train": 7000,
+      "val": 1500,
+      "test": 1500
+    }
+  },
+  "model_structure": {
+    "base_channels": 56,
+    "depth": 6,
+    "kernel_size": 5,
+    "pool_type": "avg"
+  },
+  "fixed_training_params": {
+    "dropout": 0.00010482826590949159,
+    "lr": 0.0003314168878377181,
+    "weight_decay": 0.000008268838161067728,
+    "batch_size": 16
+  },
+  "final_training": {
+    "final_seed": 2026,
+    "final_epochs": 180,
+    "final_patience": 18,
+    "final_train_mode": "fixed_split"
+  },
+  "runtime": {
+    "amp": true,
+    "amp_dtype": "bfloat16",
+    "channels_last": true,
+    "device": "cuda"
+  }
+}

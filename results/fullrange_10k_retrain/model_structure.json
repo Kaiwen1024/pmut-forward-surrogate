@@ -1,0 +1,6 @@
+{
+  "base_channels": 56,
+  "depth": 6,
+  "kernel_size": 5,
+  "pool_type": "avg"
+}

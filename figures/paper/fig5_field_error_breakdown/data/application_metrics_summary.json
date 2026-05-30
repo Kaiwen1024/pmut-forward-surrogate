@@ -1,0 +1,472 @@
+{
+  "figure": "Application-level metrics and error breakdown",
+  "data_sources": {
+    "y_test_true": "./results/fullrange_10k_retrain/eval_test/y_test_true.npy",
+    "y_test_pred": "./results/fullrange_10k_retrain/eval_test/y_test_pred.npy",
+    "test_global_indices": "./results/fullrange_10k_retrain/eval_test/test_global_indices.npy",
+    "summary": "./results/fullrange_10k_retrain/eval_test/summary.json",
+    "source_data_dir": "data/raw_mat"
+  },
+  "n_test_samples": 1500,
+  "field_unit": "Pa",
+  "roi_definition": {
+    "rows": [
+      20,
+      30
+    ],
+    "cols": [
+      20,
+      30
+    ],
+    "shape": "10x10 center ROI"
+  },
+  "frequency_mhz": [
+    1.0,
+    1.12,
+    1.25,
+    1.4,
+    1.6,
+    1.8,
+    2.0,
+    2.24,
+    2.5,
+    2.8,
+    3.15,
+    3.55,
+    4.0,
+    4.5,
+    5.0,
+    5.6,
+    6.3,
+    7.1,
+    8.0,
+    9.0,
+    10.0,
+    11.2,
+    12.5
+  ],
+  "active_count_intervals": [
+    {
+      "label": "0-100",
+      "min_inclusive": 0,
+      "max_exclusive": 101
+    },
+    {
+      "label": "101-159",
+      "min_inclusive": 101,
+      "max_exclusive": 160
+    },
+    {
+      "label": "160-279",
+      "min_inclusive": 160,
+      "max_exclusive": 280
+    },
+    {
+      "label": "280-427",
+      "min_inclusive": 280,
+      "max_exclusive": 428
+    },
+    {
+      "label": "428-848",
+      "min_inclusive": 428,
+      "max_exclusive": 849
+    },
+    {
+      "label": "849-1267",
+      "min_inclusive": 849,
+      "max_exclusive": 1268
+    },
+    {
+      "label": "1268-1678",
+      "min_inclusive": 1268,
+      "max_exclusive": 1679
+    },
+    {
+      "label": "1679-2092",
+      "min_inclusive": 1679,
+      "max_exclusive": 2093
+    },
+    {
+      "label": "2093-2500",
+      "min_inclusive": 2093,
+      "max_exclusive": 2501
+    }
+  ],
+  "application_metric_summary": [
+    {
+      "quantity": "ROI curve RMSE",
+      "latex_label": "ROI curve RMSE",
+      "unit": "Pa",
+      "mean": 574.8426325329291,
+      "median": 443.25554001017605,
+      "p95": 1292.1871224350748,
+      "max": 16835.71785382378
+    },
+    {
+      "quantity": "ROI curve MAE",
+      "latex_label": "ROI curve MAE",
+      "unit": "Pa",
+      "mean": 206.9368400603615,
+      "median": 180.14205269191575,
+      "p95": 422.56924650772754,
+      "max": 3588.2422193444295
+    },
+    {
+      "quantity": "Peak response error",
+      "latex_label": "Peak $|P|$ err.",
+      "unit": "Pa",
+      "mean": 1357.4498359031677,
+      "median": 945.84375,
+      "p95": 3871.051953124999,
+      "max": 10970.96875
+    },
+    {
+      "quantity": "Peak-frequency error",
+      "latex_label": "Peak $f$ err.",
+      "unit": "MHz",
+      "mean": 0.06593333333333336,
+      "median": 0.0,
+      "p95": 0.4500000000000002,
+      "max": 11.5
+    },
+    {
+      "quantity": "6-dB center-frequency error",
+      "latex_label": "6-dB center $f$ err.",
+      "unit": "MHz",
+      "mean": 0.020399999999999984,
+      "median": 0.0,
+      "p95": 0.19999999999999973,
+      "max": 1.5
+    },
+    {
+      "quantity": "6-dB bandwidth error",
+      "latex_label": "6-dB BW err.",
+      "unit": "MHz",
+      "mean": 0.04219999999999999,
+      "median": 0.0,
+      "p95": 0.3999999999999999,
+      "max": 3.0
+    },
+    {
+      "quantity": "6-dB fractional-bandwidth error",
+      "latex_label": "6-dB FBW err.",
+      "unit": "fraction",
+      "mean": 0.011131462477176318,
+      "median": 0.0,
+      "p95": 0.1185569397489927,
+      "max": 0.6734006734006734
+    },
+    {
+      "quantity": "High-response RMSE",
+      "latex_label": "High-response RMSE",
+      "unit": "Pa",
+      "mean": 1370.872515902859,
+      "median": 1175.4780542573315,
+      "p95": 2847.2695527553433,
+      "max": 16418.071929598118
+    }
+  ],
+  "overall_field_metrics": [
+    {
+      "scope": "All test",
+      "n_samples": 1500,
+      "rmse_pa": 660.7220878182046,
+      "mae_pa": 178.364568705989,
+      "r2": 0.9989006091195495
+    },
+    {
+      "scope": "n(M)>100",
+      "n_samples": 1443,
+      "rmse_pa": 673.3062471480657,
+      "mae_pa": 183.3136192803696,
+      "r2": 0.9988867573779265
+    }
+  ],
+  "group_summary": [
+    {
+      "active_count_interval": "0-100",
+      "n_samples": 57,
+      "pointwise_rmse_pa": 107.52531835050505,
+      "pointwise_mae_pa": 53.0754462703572,
+      "pointwise_r2": 0.9744779055374033,
+      "rmse_mean_pa": 106.5281042034122,
+      "rmse_median_pa": 103.19249583195212,
+      "rmse_p95_pa": 136.36823225647774,
+      "rmse_max_pa": 146.69159912030432,
+      "mae_mean_pa": 53.0754462703572,
+      "mae_median_pa": 51.787449937919945
+    },
+    {
+      "active_count_interval": "101-159",
+      "n_samples": 38,
+      "pointwise_rmse_pa": 132.3790824803139,
+      "pointwise_mae_pa": 62.91706737143221,
+      "pointwise_r2": 0.9905855179303847,
+      "rmse_mean_pa": 131.37460629734042,
+      "rmse_median_pa": 130.94224660004363,
+      "rmse_p95_pa": 164.2053407241898,
+      "rmse_max_pa": 168.6621659926126,
+      "mae_mean_pa": 62.91706737143222,
+      "mae_median_pa": 62.15860608110221
+    },
+    {
+      "active_count_interval": "160-279",
+      "n_samples": 75,
+      "pointwise_rmse_pa": 182.4702757606884,
+      "pointwise_mae_pa": 81.12607504424253,
+      "pointwise_r2": 0.9945190281031427,
+      "rmse_mean_pa": 179.70508623543017,
+      "rmse_median_pa": 175.5130158908722,
+      "rmse_p95_pa": 236.6182834075448,
+      "rmse_max_pa": 263.9523386410802,
+      "mae_mean_pa": 81.12607504424253,
+      "mae_median_pa": 81.0415701555335
+    },
+    {
+      "active_count_interval": "280-427",
+      "n_samples": 71,
+      "pointwise_rmse_pa": 256.49467351552386,
+      "pointwise_mae_pa": 108.24825893868882,
+      "pointwise_r2": 0.9959608345424136,
+      "rmse_mean_pa": 249.86830716822192,
+      "rmse_median_pa": 245.89810163191282,
+      "rmse_p95_pa": 355.60817214981927,
+      "rmse_max_pa": 476.4095370042061,
+      "mae_mean_pa": 108.24825893868882,
+      "mae_median_pa": 106.65041109147279
+    },
+    {
+      "active_count_interval": "428-848",
+      "n_samples": 278,
+      "pointwise_rmse_pa": 408.6510600475218,
+      "pointwise_mae_pa": 158.75362733092788,
+      "pointwise_r2": 0.9974809552267633,
+      "rmse_mean_pa": 388.95492950653295,
+      "rmse_median_pa": 367.5693096332027,
+      "rmse_p95_pa": 596.3581252162475,
+      "rmse_max_pa": 1413.9379946201702,
+      "mae_mean_pa": 158.75362733092788,
+      "mae_median_pa": 154.2320432536747
+    },
+    {
+      "active_count_interval": "849-1267",
+      "n_samples": 274,
+      "pointwise_rmse_pa": 541.5979779787133,
+      "pointwise_mae_pa": 206.28858432478273,
+      "pointwise_r2": 0.998623682895939,
+      "rmse_mean_pa": 523.5120595728812,
+      "rmse_median_pa": 498.13380467013803,
+      "rmse_p95_pa": 769.736656356164,
+      "rmse_max_pa": 1093.0934699974737,
+      "mae_mean_pa": 206.28858432478273,
+      "mae_median_pa": 198.4415962194028
+    },
+    {
+      "active_count_interval": "1268-1678",
+      "n_samples": 228,
+      "pointwise_rmse_pa": 543.878077031298,
+      "pointwise_mae_pa": 205.23121371656225,
+      "pointwise_r2": 0.9992881847501944,
+      "rmse_mean_pa": 521.6005440833886,
+      "rmse_median_pa": 493.036100554545,
+      "rmse_p95_pa": 790.1769845628031,
+      "rmse_max_pa": 1307.4062685664087,
+      "mae_mean_pa": 205.23121371656225,
+      "mae_median_pa": 198.47161506015942
+    },
+    {
+      "active_count_interval": "1679-2092",
+      "n_samples": 237,
+      "pointwise_rmse_pa": 902.0180425827443,
+      "pointwise_mae_pa": 235.45681218213008,
+      "pointwise_r2": 0.9987201440438196,
+      "rmse_mean_pa": 745.3588880826994,
+      "rmse_median_pa": 584.7719586494152,
+      "rmse_p95_pa": 1644.9876133777307,
+      "rmse_max_pa": 3789.7271489535733,
+      "mae_mean_pa": 235.45681218213008,
+      "mae_median_pa": 207.74672474524456
+    },
+    {
+      "active_count_interval": "2093-2500",
+      "n_samples": 242,
+      "pointwise_rmse_pa": 1035.058118102078,
+      "pointwise_mae_pa": 186.3969435163809,
+      "pointwise_r2": 0.9987291893660002,
+      "rmse_mean_pa": 655.369814862686,
+      "rmse_median_pa": 470.3854117174525,
+      "rmse_p95_pa": 1740.8462399707737,
+      "rmse_max_pa": 9034.495317073675,
+      "mae_mean_pa": 186.3969435163809,
+      "mae_median_pa": 154.67484537366784
+    }
+  ],
+  "per_frequency_summary": [
+    {
+      "channel": 0,
+      "frequency_mhz": 1.0,
+      "rmse_pa": 6.289334278017964,
+      "mae_pa": 4.9348438554889675,
+      "r2": 0.9999588815328313
+    },
+    {
+      "channel": 1,
+      "frequency_mhz": 1.12,
+      "rmse_pa": 7.6649362878089695,
+      "mae_pa": 6.012685097752953,
+      "r2": 0.9999624497824493
+    },
+    {
+      "channel": 2,
+      "frequency_mhz": 1.25,
+      "rmse_pa": 10.364299045130021,
+      "mae_pa": 8.136069477243932,
+      "r2": 0.9999601191768404
+    },
+    {
+      "channel": 3,
+      "frequency_mhz": 1.4,
+      "rmse_pa": 14.100537078695583,
+      "mae_pa": 11.166243147411029,
+      "r2": 0.9999553403904958
+    },
+    {
+      "channel": 4,
+      "frequency_mhz": 1.6,
+      "rmse_pa": 17.910185569385494,
+      "mae_pa": 14.125127396932475,
+      "r2": 0.9999550313235471
+    },
+    {
+      "channel": 5,
+      "frequency_mhz": 1.8,
+      "rmse_pa": 23.477455984644536,
+      "mae_pa": 18.481934816692036,
+      "r2": 0.9999519070720839
+    },
+    {
+      "channel": 6,
+      "frequency_mhz": 2.0,
+      "rmse_pa": 39.59262437688333,
+      "mae_pa": 31.02686691950944,
+      "r2": 0.9999347079242394
+    },
+    {
+      "channel": 7,
+      "frequency_mhz": 2.24,
+      "rmse_pa": 53.1500336915078,
+      "mae_pa": 41.553990475176334,
+      "r2": 0.9999215814935524
+    },
+    {
+      "channel": 8,
+      "frequency_mhz": 2.5,
+      "rmse_pa": 79.88542503051606,
+      "mae_pa": 61.982602805752514,
+      "r2": 0.9998746736408753
+    },
+    {
+      "channel": 9,
+      "frequency_mhz": 2.8,
+      "rmse_pa": 150.20095103492346,
+      "mae_pa": 116.0019147665876,
+      "r2": 0.9997885275060479
+    },
+    {
+      "channel": 10,
+      "frequency_mhz": 3.15,
+      "rmse_pa": 436.29736360321505,
+      "mae_pa": 324.92759873358233,
+      "r2": 0.9995725650794941
+    },
+    {
+      "channel": 11,
+      "frequency_mhz": 3.55,
+      "rmse_pa": 1401.898239223874,
+      "mae_pa": 1007.3900616005249,
+      "r2": 0.9991395903264688
+    },
+    {
+      "channel": 12,
+      "frequency_mhz": 4.0,
+      "rmse_pa": 2757.166884798447,
+      "mae_pa": 1480.131416452356,
+      "r2": 0.9931122803390111
+    },
+    {
+      "channel": 13,
+      "frequency_mhz": 4.5,
+      "rmse_pa": 317.57005633082395,
+      "mae_pa": 243.90787007835456,
+      "r2": 0.9994227287211929
+    },
+    {
+      "channel": 14,
+      "frequency_mhz": 5.0,
+      "rmse_pa": 273.59821047137484,
+      "mae_pa": 209.52013714691074,
+      "r2": 0.9995905284479625
+    },
+    {
+      "channel": 15,
+      "frequency_mhz": 5.6,
+      "rmse_pa": 172.5316903069174,
+      "mae_pa": 132.57210916047111,
+      "r2": 0.9996260006398945
+    },
+    {
+      "channel": 16,
+      "frequency_mhz": 6.3,
+      "rmse_pa": 119.03421709985533,
+      "mae_pa": 91.99090785300493,
+      "r2": 0.9995725106242265
+    },
+    {
+      "channel": 17,
+      "frequency_mhz": 7.1,
+      "rmse_pa": 91.66906120619389,
+      "mae_pa": 70.29468754169235,
+      "r2": 0.9995522672661484
+    },
+    {
+      "channel": 18,
+      "frequency_mhz": 8.0,
+      "rmse_pa": 88.64003807985182,
+      "mae_pa": 67.57383891044007,
+      "r2": 0.9995292999370659
+    },
+    {
+      "channel": 19,
+      "frequency_mhz": 9.0,
+      "rmse_pa": 77.32239953145695,
+      "mae_pa": 59.28187195188252,
+      "r2": 0.9996209033167373
+    },
+    {
+      "channel": 20,
+      "frequency_mhz": 10.0,
+      "rmse_pa": 64.85138585118072,
+      "mae_pa": 49.78255862973981,
+      "r2": 0.9996929306659892
+    },
+    {
+      "channel": 21,
+      "frequency_mhz": 11.2,
+      "rmse_pa": 41.119545481504176,
+      "mae_pa": 31.642187287781873,
+      "r2": 0.9997383930093863
+    },
+    {
+      "channel": 22,
+      "frequency_mhz": 12.5,
+      "rmse_pa": 26.488935815739598,
+      "mae_pa": 19.947556132458576,
+      "r2": 0.9994259845244414
+    }
+  ],
+  "notes": [
+    "ROI response metrics are computed from the mean acoustic magnitude over the central 10x10 ROI.",
+    "Peak, center-frequency, and bandwidth metrics are derived from the ROI mean frequency response.",
+    "High-response RMSE is computed over the top 10% true-field amplitudes for each test sample."
+  ]
+}
