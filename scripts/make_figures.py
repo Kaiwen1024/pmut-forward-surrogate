@@ -40,7 +40,11 @@ def plot_prediction_example(eval_dir: Path, figures_dir: Path, sample_index: int
     pred_path = eval_dir / "y_test_pred.npy"
     if not true_path.exists() or not pred_path.exists():
         missing = [str(path) for path in (true_path, pred_path) if not path.exists()]
-        raise FileNotFoundError(f"Required prediction file(s) not found: {', '.join(missing)}")
+        print(
+            "[Figures] skipping representative_field_prediction.png; "
+            f"missing prediction file(s): {', '.join(missing)}"
+        )
+        return
     y_true = np.load(true_path, mmap_mode="r")
     y_pred = np.load(pred_path, mmap_mode="r")
     idx = min(sample_index, y_true.shape[0] - 1)

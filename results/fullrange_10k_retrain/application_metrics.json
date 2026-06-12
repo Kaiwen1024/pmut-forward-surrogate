@@ -1,7 +1,7 @@
 {
   "schema": "pmut-forward-application-metrics-v1",
-  "source": "paper_table_ii",
-  "notes": "Application-level metrics computed on the held-out test split. The ROI is the central 10 x 10 spatial window.",
+  "source": "released_evaluation_records_for_table_ii",
+  "notes": "Application-level metrics computed on the held-out test split and reported in manuscript Table II. The ROI is the central 10 x 10 spatial window.",
   "metrics": [
     {
       "name": "ROI curve RMSE",

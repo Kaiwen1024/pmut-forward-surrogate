@@ -29,7 +29,18 @@ tagged release `paper-v1` rather than the moving main branch.
 | Main evaluation record | `results/fullrange_10k_retrain/eval_test/summary.json` |
 | Manuscript figures | `figures/paper/` |
 
-For an initial repository sanity check, run:
+For quick inspection without downloading the large LFS files, clone the tagged
+artifact with LFS smudge disabled and inspect the released metrics, figures,
+source code, and checksums:
+
+```bash
+GIT_LFS_SKIP_SMUDGE=1 git clone --branch paper-v1 \
+  https://github.com/Kaiwen1024/pmut-forward-surrogate.git
+cd pmut-forward-surrogate
+```
+
+For a full cache-based sanity check, download the LFS files first and then run
+the smoke test:
 
 ```bash
 conda env create -f environment.yml
@@ -39,6 +50,10 @@ git lfs pull
 export PYTHONPATH="$PWD/src:$PYTHONPATH"
 python scripts/smoke_test.py --cache_path data/fullrange_cache
 ```
+
+The full LFS download is about 2.7 GB. The smoke test reads the complete cache,
+so reserve at least 4 GB of free disk space and 8 GB of system memory for a
+comfortable local check.
 
 ## Main Results
 
@@ -124,9 +139,13 @@ split seed:        42
 
 Each input is a `50 x 50` binary PMUT layout. The active-element count ranges
 from 0 to 2500 in the released full-range dataset. Each target is a
-`23 x 50 x 50` Pa-valued acoustic magnitude field `|P_tot|`. For
-application-level analysis, the region of interest (ROI) is defined as the
-central `10 x 10` spatial window.
+`23 x 50 x 50` acoustic-pressure magnitude field `|P_tot|` in pascals. The
+frequency channels correspond to 23 one-sixth-octave center frequencies from
+1 to 12.5 MHz. The PZT-based PMUT array uses diaphragms with a diameter of
+100 um and a center-to-center pitch of 120 um, matching the simulation setup
+described in the manuscript. For application-level analysis, the region of
+interest (ROI) is defined as the central `10 x 10` spatial window on the
+observation plane.
 
 In the released data loader, the raw MATLAB keys are `mask_rand` for the binary
 layout and `Ptot` for the acoustic field.
@@ -186,6 +205,12 @@ git lfs install
 git lfs pull
 ```
 
+The tracked LFS payload is about 2.7 GB: a 303 MB checkpoint, a 100 MB input
+cache, and two target-field cache parts of about 1.8 GB and 500 MB. A metadata
+or source-code review can be done without downloading these files by using
+`GIT_LFS_SKIP_SMUDGE=1`; running the smoke test, evaluation, or full figure
+regeneration requires the complete cache.
+
 The split cache files are:
 
 ```text
@@ -199,7 +224,7 @@ data/fullrange_cache/y_part_001.npy
 
 ### 1. Smoke Test
 
-Run this check first after cloning:
+Run this check after the complete LFS cache has been downloaded:
 
 ```bash
 export PYTHONPATH="$PWD/src:$PYTHONPATH"
@@ -275,13 +300,18 @@ configs/fullrange_10k_fixed_unet.json
 
 ### 4. Regenerate Figures and Artifact Metadata
 
-After training or evaluation, regenerate the repository summary figures and
-checksum metadata:
+After evaluation has generated local prediction arrays, regenerate the
+repository summary figures and checksum metadata:
 
 ```bash
 python scripts/make_figures.py
 bash scripts/collect_final_artifacts.sh
 ```
+
+If the large prediction arrays are absent, `scripts/make_figures.py` still
+updates the metrics summary figure and skips the representative field figure.
+Run `bash scripts/evaluate_fullrange_test.sh` first when the representative
+field figure needs to be regenerated from local predictions.
 
 `collect_final_artifacts.sh` copies a newly trained checkpoint from
 `results/fullrange_10k_retrain/pmut_forward_unet_fullrange_10k.pt` when that
@@ -317,6 +347,7 @@ The smoke test only loads the cached arrays and verifies tensor shapes, finite
 values, and the deterministic train/validation/test split. Full test-set
 evaluation is more expensive because it runs inference over the held-out test
 split and may write prediction arrays to `results/fullrange_10k_retrain/eval_test/`.
+Those prediction arrays occupy about 690 MB for the released test split.
 Full retraining is GPU-intensive and is mainly intended for complete artifact
 verification or follow-up experiments.
 
