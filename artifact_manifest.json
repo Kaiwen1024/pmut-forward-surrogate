@@ -78,8 +78,8 @@
     },
     {
       "path": "figures/paper/fig3_test_prediction/data/fig3_selected_samples.json",
-      "bytes": 3198,
-      "sha256": "ced960f3fe3509486edd9092d27a51d4ae15f75f86909de82bc44685441f7f2a"
+      "bytes": 3171,
+      "sha256": "0dca70ca6f4a6a04fe054811ee641d8b4d0cfcfe3964df48dfd47d25c867bf5d"
     },
     {
       "path": "figures/paper/fig3_test_prediction/export/fig3_test_prediction.pdf",
@@ -198,8 +198,8 @@
     },
     {
       "path": "results/fullrange_10k_retrain/eval_test/summary.json",
-      "bytes": 122094,
-      "sha256": "69318ffbbedffa81f3206f696729b545ed8439c065eb59efb94aca15246b6d19"
+      "bytes": 122062,
+      "sha256": "c49c02b38cfd1890ea5fedc7df5bbddc71b222401037352d3de119b9a946bc68"
     },
     {
       "path": "results/fullrange_10k_retrain/loss_curve.png",
@@ -208,8 +208,8 @@
     },
     {
       "path": "results/fullrange_10k_retrain/metrics.json",
-      "bytes": 121066,
-      "sha256": "5f7e01794b384e1457e54247311898c83eb95e324045b819c69cb68d8ba809d4"
+      "bytes": 121042,
+      "sha256": "7c6a18f2655b837c76b9f723ee330580b503c0ceb5d2a518ed58ace366ec80af"
     },
     {
       "path": "results/fullrange_10k_retrain/model_structure.json",

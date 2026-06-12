@@ -400,7 +400,6 @@ def main() -> None:
     rmse = math.sqrt(mse)
     mae = float(np.mean(np.abs(y_pred - y_eval)))
     r2 = base.r2_score_np(y_eval.reshape(-1), y_pred.reshape(-1))
-    mape = base.mape_np(y_eval.reshape(-1), y_pred.reshape(-1))
 
     speed = benchmark_speed(
         model=model,
@@ -455,7 +454,6 @@ def main() -> None:
             "rmse": rmse,
             "mae": mae,
             "r2": r2,
-            "mape": mape,
         },
         "pointwise_metrics_standardized": norm_stats,
         "speed_metrics": speed,

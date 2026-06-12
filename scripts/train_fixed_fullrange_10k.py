@@ -253,7 +253,6 @@ def main() -> None:
     rmse = math.sqrt(mse)
     mae = float(np.mean(np.abs(y_pred - y_test)))
     r2 = base.r2_score_np(y_test.reshape(-1), y_pred.reshape(-1))
-    mape = base.mape_np(y_test.reshape(-1), y_pred.reshape(-1))
     source_indices = np.asarray(data_meta.get("source_indices", list(range(x.shape[0]))), dtype=np.int64)
 
     np.save(args.out_dir / "filtered_global_indices.npy", source_indices)
@@ -339,7 +338,6 @@ def main() -> None:
             "rmse": rmse,
             "mae": mae,
             "r2": r2,
-            "mape": mape,
         },
         "test_metrics_norm": test_stats_norm,
         "data_meta": data_meta,

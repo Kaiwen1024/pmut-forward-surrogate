@@ -1,5 +1,5 @@
 {
-  "checkpoint_path": "results/fullrange_10k_retrain/pmut_forward_unet_fullrange_10k.pt",
+  "checkpoint_path": "artifacts/checkpoints/pmut_forward_unet_fullrange_10k.pt",
   "data_dir": "data/raw_mat",
   "cache_path": "data/fullrange_cache",
   "eval_split": "test",
@@ -38,8 +38,7 @@
     "mse": 436552.40625,
     "rmse": 660.7211259298434,
     "mae": 178.3646697998047,
-    "r2": 0.9989005923271179,
-    "mape": 514488960.0
+    "r2": 0.9989005923271179
   },
   "pointwise_metrics_standardized": {
     "loss": 0.0005551297897472977,

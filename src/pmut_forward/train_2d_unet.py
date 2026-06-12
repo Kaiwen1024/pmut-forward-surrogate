@@ -784,10 +784,6 @@ def r2_score_np(y_true: np.ndarray, y_pred: np.ndarray) -> float:
     return float(1.0 - ss_res / ss_tot)
 
 
-def mape_np(y_true: np.ndarray, y_pred: np.ndarray, eps: float = 1e-8) -> float:
-    return float(np.mean(np.abs((y_true - y_pred) / (np.abs(y_true) + eps))) * 100.0)
-
-
 def plot_curves(history: Dict[str, List[float]], out_dir: Path) -> None:
     epochs = np.arange(1, len(history["train_loss"]) + 1)
     plt.figure(figsize=(7, 5))
@@ -1015,7 +1011,6 @@ def main() -> None:
     rmse = math.sqrt(mse)
     mae = float(np.mean(np.abs(y_pred - y_test)))
     r2 = r2_score_np(y_test.reshape(-1), y_pred.reshape(-1))
-    mape = mape_np(y_test.reshape(-1), y_pred.reshape(-1))
 
     np.save(args.out_dir / "y_test_true.npy", y_test)
     np.save(args.out_dir / "y_test_pred.npy", y_pred)
@@ -1058,7 +1053,6 @@ def main() -> None:
             "rmse": rmse,
             "mae": mae,
             "r2": r2,
-            "mape": mape,
         },
         "test_metrics_norm": test_stats_norm,
         "timing": {
