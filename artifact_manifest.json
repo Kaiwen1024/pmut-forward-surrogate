@@ -43,8 +43,8 @@
     },
     {
       "path": "figures/paper/README.md",
-      "bytes": 2932,
-      "sha256": "fbdcb2badf84f91ed57ebb5fde4fd12d948617b2b71d7be62a6d484d2bde2b9e"
+      "bytes": 2892,
+      "sha256": "40f8fe5c2b109a371721056891205042f661f0553da0a1bbdd8f93bf0c5c8b82"
     },
     {
       "path": "figures/paper/fig2_training_curves/data/DATA_SOURCE.md",

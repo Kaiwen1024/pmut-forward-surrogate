@@ -2,8 +2,7 @@
 
 This directory contains the manuscript data-display figures associated with
 the current artifact release. The copied PDF exports are byte-identical to the
-files included by `manuscript/paper_sensors2026/main.tex` when the artifact
-package was prepared.
+figure files used when the artifact package was prepared.
 
 | Manuscript figure | Repository export | What it shows |
 |---|---|---|
